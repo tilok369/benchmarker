@@ -18,7 +18,6 @@ public class ExtractWordsBenchMark
     {
         var firstIndex = 0; 
         var lastIndex=0;
-        //var words = new List<string>();
         var wordCount = 0;
         foreach (var c in Book)
         {
@@ -26,13 +25,11 @@ public class ExtractWordsBenchMark
             if (c == ' ' || c == '.' || c == ',' || c == ';' || c == '!')
             {
                 var word = Book.Substring(firstIndex, lastIndex - firstIndex - 1);
-                //words.Add(word);
                 wordCount++;
                 firstIndex = lastIndex;
             }
         }
 
-        //Console.WriteLine(string.Join("|", words));
         return wordCount;
     }
 
@@ -42,7 +39,6 @@ public class ExtractWordsBenchMark
         var bookSpan = Book.AsSpan();
         var firstIndex = 0;
         var lastIndex = 0;
-        //var words = new List<string>();
         var wordCount = 0;
         foreach (var c in bookSpan)
         {
@@ -50,13 +46,11 @@ public class ExtractWordsBenchMark
             if (c == ' ' || c == '.' || c == ',' || c == ';' || c == '!')
             {
                 var word = bookSpan.Slice(firstIndex, lastIndex - firstIndex - 1);
-                //words.Add(word.ToString());
                 wordCount++;
                 firstIndex = lastIndex;
             }
         }
 
-        //Console.WriteLine(string.Join("|", words));
         return wordCount;
     }
 }
