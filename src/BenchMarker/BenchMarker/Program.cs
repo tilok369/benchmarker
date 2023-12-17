@@ -3,6 +3,7 @@
 using BenchmarkDotNet.Running;
 using BenchMarker;
 
-BenchmarkRunner.Run<ValidPasswordBenchMark>();
+//BenchmarkRunner.Run<ValidPasswordBenchMark>();
+BenchmarkRunner.Run<ExtractWordsBenchMark>();
 
 Console.ReadKey(true);
